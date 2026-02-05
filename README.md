@@ -12,9 +12,20 @@ the browser.
 - Paint and erase blocks with a palette-based selector
 - Export your work as JSON for quick sharing or reloading
 
-## Run locally
+## Run as a local desktop app (Electron)
 
-You can open this with any static server:
+Install dependencies and launch the desktop app:
+
+```bash
+npm install
+npm start
+```
+
+The editor opens in a local window and runs entirely on your machine.
+
+## Run in a browser (optional)
+
+If you prefer a browser tab instead of the desktop window:
 
 ```bash
 python -m http.server 8000
