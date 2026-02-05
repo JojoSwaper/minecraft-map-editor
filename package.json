@@ -1,0 +1,31 @@
+{
+  "name": "minecraft-web-voxel-editor",
+  "version": "1.0.0",
+  "description": "This is a lightweight, browser-based voxel editor inspired by Minecraft. It can import selections from your world and let you build on top of them directly in the browser.",
+  "main": "main.js",
+  "scripts": {
+    "build": "esbuild app.js --bundle --format=esm --platform=browser --outfile=dist/bundle.js",
+    "start": "npm run build && electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JojoSwaper/minecraft-map-editor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JojoSwaper/minecraft-map-editor/issues"
+  },
+  "homepage": "https://github.com/JojoSwaper/minecraft-map-editor#readme",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "electron": "^40.1.0",
+    "pako": "^2.1.0",
+    "prismarine-nbt": "^2.8.0",
+    "three": "^0.182.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.2"
+  }
+}
