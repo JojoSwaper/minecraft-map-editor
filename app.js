@@ -1,8 +1,12 @@
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/controls/OrbitControls.js";
-import { parse, simplify } from "https://cdn.jsdelivr.net/npm/prismarine-nbt@latest/+esm";
-import { Buffer } from "https://cdn.jsdelivr.net/npm/buffer@latest/+esm";
-import pako from "https://cdn.jsdelivr.net/npm/pako@latest/+esm";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { parse, simplify } from "prismarine-nbt";
+import { Buffer } from "buffer";
+import pako from "pako";
+
+if (!globalThis.Buffer) {
+  globalThis.Buffer = Buffer;
+}
 
 const DEFAULT_BLOCKS = [
   "minecraft:air",

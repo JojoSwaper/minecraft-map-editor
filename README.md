@@ -12,22 +12,24 @@ the browser.
 - Paint and erase blocks with a palette-based selector
 - Export your work as JSON for quick sharing or reloading
 
-## Run as a local desktop app (Electron)
+## Run as a local desktop app (fully offline)
 
-Install dependencies and launch the desktop app:
+Install dependencies once, then launch the desktop app:
 
 ```bash
 npm install
 npm start
 ```
 
-The editor opens in a local window and runs entirely on your machine.
+`npm start` builds a local bundle and opens an Electron window. After the first
+install, the app runs without any network access.
 
 ## Run in a browser (optional)
 
 If you prefer a browser tab instead of the desktop window:
 
 ```bash
+npm run build
 python -m http.server 8000
 ```
 
