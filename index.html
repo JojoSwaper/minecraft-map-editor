@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minecraft Web Voxel Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <h1>Minecraft Web Voxel Editor</h1>
+        <p>
+          Import a structure from your world (.nbt/.mcstructure or .schem) and
+          build on it.
+        </p>
+      </div>
+      <div class="header-actions">
+        <button id="resetViewBtn" type="button">Reset View</button>
+      </div>
+    </header>
+    <main class="app">
+      <aside class="sidebar">
+        <section>
+          <h2>Import</h2>
+          <input id="fileInput" type="file" accept=".nbt,.mcstructure,.schem,.json" />
+          <div class="hint">Use a Structure Block or WorldEdit to export.</div>
+        </section>
+        <section>
+          <h2>World</h2>
+          <div class="field-row">
+            <label>
+              Width
+              <input id="sizeX" type="number" min="1" max="256" value="32" />
+            </label>
+            <label>
+              Height
+              <input id="sizeY" type="number" min="1" max="256" value="16" />
+            </label>
+            <label>
+              Depth
+              <input id="sizeZ" type="number" min="1" max="256" value="32" />
+            </label>
+          </div>
+          <button id="newWorldBtn" type="button">New Empty World</button>
+        </section>
+        <section>
+          <h2>Blocks</h2>
+          <label for="blockSelect">Block type</label>
+          <select id="blockSelect"></select>
+          <div class="field-row">
+            <input
+              id="customBlockName"
+              type="text"
+              placeholder="minecraft:oak_planks"
+            />
+            <button id="addBlockBtn" type="button">Add Block</button>
+          </div>
+          <div class="tool-row">
+            <label>
+              <input type="radio" name="tool" value="place" checked />
+              Place
+            </label>
+            <label>
+              <input type="radio" name="tool" value="erase" />
+              Erase
+            </label>
+          </div>
+          <div class="hint">Left click to place, right click to erase.</div>
+        </section>
+        <section>
+          <h2>Export</h2>
+          <button id="exportBtn" type="button">Download JSON</button>
+        </section>
+        <section class="stats">
+          <h2>Status</h2>
+          <div id="statusText">Ready</div>
+          <div id="statsText">Blocks: 0</div>
+        </section>
+      </aside>
+      <section class="viewport">
+        <div id="canvasContainer"></div>
+        <div class="overlay">
+          <div id="hoverText">Hover a block to edit.</div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
